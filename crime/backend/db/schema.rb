@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2021_02_18_073853) do
 
   create_table "cases", force: :cascade do |t|
-    t.string "criminal"
-    t.string "charge"
+    t.string "name"
+    t.boolean "victim"
     t.text "bio"
     t.boolean "solved"
     t.integer "category_id", null: false

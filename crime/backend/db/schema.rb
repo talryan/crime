@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_02_18_073853) do
 
   create_table "cases", force: :cascade do |t|
-    t.string "name"
+    t.string "known_as"
     t.boolean "victim"
     t.text "bio"
     t.boolean "solved"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_02_18_073853) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

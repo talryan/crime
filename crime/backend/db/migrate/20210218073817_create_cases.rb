@@ -1,7 +1,7 @@
 class CreateCases < ActiveRecord::Migration[6.1]
   def change
     create_table :cases do |t|
-      t.string :name
+      t.string :known_as
       t.boolean :victim
       t.text :bio
       t.boolean :solved

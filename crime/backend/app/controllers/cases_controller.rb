@@ -1,43 +1,31 @@
 class CasesController < ApplicationController
-  before_action :set_case, only: [:show, :update, :destroy]
 
-  # GET /cases
+
+
   def index
-    @cases = Case.all
+    cases = Case.all
 
-    render json: @cases
+    render json: cases,  :include => :category, :status => 200
   end
 
   # GET /cases/1
   def show
-    render json: @case
+    case = Case.find(params[:id])
+    render json: case, :include => :category , :status => 200
   end
 
   # POST /cases
-  def create
-    @case = Case.new(case_params)
+  def create 
+      category = Category.find_by(name: params[:category])
+    case = Case.create(name: params[:name], victim: params[:victim], bio: params[:bio], solved: [:solved], category: category)
+    if case.name != ""
+        render json: case, :include => :category, :status => 201
+    end 
+end 
 
-    if @case.save
-      render json: @case, status: :created, location: @case
-    else
-      render json: @case.errors, status: :unprocessable_entity
-    end
-  end
 
-  # PATCH/PUT /cases/1
-  def update
-    if @case.update(case_params)
-      render json: @case
-    else
-      render json: @case.errors, status: :unprocessable_entity
-    end
-  end
 
-  # DELETE /cases/1
-  def destroy
-    @case.destroy
-  end
-
+ 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_case

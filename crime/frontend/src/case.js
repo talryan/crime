@@ -1,7 +1,7 @@
 class Case {
     static cases = [];
-constructor(name, victim, bio, solved, category){
-this.name = name
+constructor(knownAs, victim, bio, solved, category){
+this.knownAs= knownAs
 this.victim = victim
 this.bio = bio 
 this.solved = solved

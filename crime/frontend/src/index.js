@@ -60,7 +60,7 @@ function fetchCases(){
 
     function caseFormSubmit(event) {
         event.preventDefault() 
-        let caseDiv = document.getElementById("cases-container").innerHTML = ""
+      
       
         let newKnownAs = document.getElementById("known_as").value
         let newBio = document.getElementById("bio").value

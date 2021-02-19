@@ -12,19 +12,40 @@ class Case {
 
 
 
-    renderCase() {
-        let caseDiv = document.getElementById("cases-container")
+
+    // renderCase() {
+    //     let caseDiv = document.getElementById("cases-container")
        
-        caseDiv.innerHTML +=
-    `
-    <ul>
-    <li> Name: ${this.known_as} 
-    </li>
-    </ul>
-    `
+    //     caseDiv.innerHTML +=
+    // `
+    // <ul>
+    // <li> Name: ${this.known_as} 
+    // </li>
+    // </ul>
+    // `
+
+    
+   
+    renderCase() {
+        const missingDiv = document.querySelector("#missing-person")
+        const criminalDiv = document.querySelector("#criminal")
+        const serialKillerDiv = document.querySelector("#serial-killer")
+        const unsolvedDiv = document.querySelector("#unsolved")
+        const closedDiv = document.querySelector("#closed-case")
+
+        
+        missingDiv.innerHTML = ""
+        criminalDiv.innerHTML = ""
+        serialKillerDiv.innerHTML = ""
+        unsolvedDiv.innerHTML = ""
+        closedDiv.innerHTML = ""
+    
+        
 
     }
-}       
+
+}
+
 
 
 

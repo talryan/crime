@@ -1,7 +1,7 @@
 class Case {
     static cases = [];
-    constructor(knownAs, victim, bio, solved, category){
-        this.knownAs= knownAs
+    constructor(known_as, victim, bio, solved, category){
+        this.known_as = known_as
         this.victim = victim
         this.bio = bio 
         this.solved = solved
@@ -17,7 +17,7 @@ class Case {
         caseDiv.innerHTML += 
     `
     <ul>
-    <li> Killer Name: ${this.knownAs} 
+    <li> Name: ${this.known_as} 
     </li>
     </ul>
     `

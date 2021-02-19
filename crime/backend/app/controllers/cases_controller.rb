@@ -3,9 +3,9 @@ class CasesController < ApplicationController
 
   # GET /cases
   def index
-    @cases = Case.all
+    cases = Case.all
 
-    render json: @cases
+    render json: cases, include: :category
   end
 
   # GET /cases/1

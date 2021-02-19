@@ -6,25 +6,29 @@ class Case {
         this.bio = bio 
         this.solved = solved
         this.category_id = category_id
+        // this.category = Category.all.find((c) => c.id == category_id)
+         // return one category object  (will not work if the categories do not finish fetching before the cases are fetched.)
+        this.element = document.createElement("li")
         Case.cases.push(this);
-        console.log(this)
+       
     }
 
-
+// Callback function is like a ruby block when you are iterating
 
 
 
 
     renderCase() {
         let caseDiv = document.getElementById("cases-container")
-       
-        caseDiv.innerHTML +=
-    `
-    <ul>
-    <li> Name: ${this.known_as} 
-    </li>
-    </ul>
-    `
+        this.element.innerHTML =
+        `
+             Name: ${this.known_as} 
+        `
+        caseDiv.appendChild(this.element)
+        // direct access to element
+        //makes it easier to change at a later time 
+        // Split append and render into separate functions **
+        // append somehwere one time 
     }
 
     

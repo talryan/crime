@@ -22,6 +22,16 @@ function fetchCases(){
             })
 }
 
+function fetchCategories(){
+    fetch(`${baseUrl}/categories`)
+    .then(response => response.json())
+    .then(categories => { 
+        for (const category of categories){
+            let cat = new Category (category.id, category.title)
+            cat.renderCategory();
+        }
+    })
+}
 
     function createForm(){
         let caseForm = document.getElementById("case-form")

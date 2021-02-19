@@ -1,3 +1,9 @@
+const missingDiv = document.querySelector("#missing-person")
+const criminalDiv = document.querySelector("#criminal")
+const serialKillerDiv = document.querySelector("#serial-killer")
+const unsolvedDiv = document.querySelector("#unsolved")
+const closedDiv = document.querySelector("#closed-case")
+
 document.addEventListener("DOMContentLoaded", () => {
     fetchCases(), createForm()
 })

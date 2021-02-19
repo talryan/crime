@@ -1,11 +1,11 @@
 class Case {
     static cases = [];
-    constructor(known_as, victim, bio, solved, category){
+    constructor(known_as, victim, bio, solved, category_id){
         this.known_as = known_as
         this.victim = victim
         this.bio = bio 
         this.solved = solved
-        this.category = category 
+        this.category_id = category_id
         Case.cases.push(this);
     }
 
@@ -14,7 +14,8 @@ class Case {
 
     renderCase() {
         let caseDiv = document.getElementById("cases-container")
-        caseDiv.innerHTML += 
+       
+        caseDiv.innerHTML +=
     `
     <ul>
     <li> Name: ${this.known_as} 

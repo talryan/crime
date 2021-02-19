@@ -1,16 +1,19 @@
 class Category {
+    static categories = [];
 constructor(id, title){
     this.id = id
     this.title = title
     this.element = document.createElement("li")
+    Category.categories.push(this);
     
 }
 
 renderCategory() {
     let categoryDiv = document.getElementById("category-container")
     this.element.innerHTML =
+    // categoryDiv.innerHTML +=
     `
-         Name: ${this.title} 
+         Category: ${this.title} 
     `
     categoryDiv.appendChild(this.element)
     // direct access to element

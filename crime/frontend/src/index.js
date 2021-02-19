@@ -5,7 +5,7 @@ const unsolvedDiv = document.querySelector("#unsolved")
 const closedDiv = document.querySelector("#closed-case")
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetchCases(), createForm()
+    fetchCases(), createForm(), fetchCategories()
 })
 
 const baseUrl = "http://localhost:3000"

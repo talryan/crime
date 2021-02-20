@@ -18,7 +18,7 @@ renderCategory() {
     this.element.innerHTML =
     // categoryDiv.innerHTML +=
     `
-         <button class="btn btn-dark"> Category: ${this.title} </button>
+         <button class="btn btn-dark">  ${this.title} </button>
     `
     categoryDiv.appendChild(this.element)
     this.element.addEventListener("click", () => this.renderCasesWithinCategory())
@@ -32,21 +32,19 @@ renderCategory() {
     renderCasesWithinCategory() {
         let caseDiv = document.getElementById("cases-container")
         caseDiv.innerHTML = ""
-        // this.element.innerHTML =
-        // `
-        
-        //    ${this} 
-        // `
-        // console.log(this.cases)
-        // forEach(const trueCrimeCase of this.cases)  {
             this.cases.forEach(trueCrimeCase => 
             caseDiv.innerHTML +=
             `
            <li>
-           <button class="btn btn-dark"> ${trueCrimeCase.known_as} </button>
-            
+           <button class="btn2 btn-dark"> ${trueCrimeCase.known_as} </button>
+           
             </li>
             `
+    
+
+
+           
+          
             );
             // console.log(trueCrimeCase.known_as)
     //  let c = new Case (trueCrimeCase.known_as, trueCrimeCase.victim, trueCrimeCase.bio, trueCrimeCase.solved, trueCrimeCase.category_id)
@@ -56,3 +54,6 @@ renderCategory() {
     }
  
     // }
+
+
+  

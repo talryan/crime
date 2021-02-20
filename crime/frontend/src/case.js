@@ -24,12 +24,12 @@ criminalBtn.addEventListener("click", this.pressButtons)
 
 
     renderCase() {
-        let caseDiv = document.getElementById("cases-container")
-        this.element.innerHTML =
-        `
-           ${this.known_as} 
-        `
-        caseDiv.appendChild(this.element)
+        // let caseDiv = document.getElementById("cases-container")
+        // this.element.innerHTML =
+        // `
+        //    ${this.known_as} 
+        // `
+        // caseDiv.appendChild(this.element)
       
     }
    

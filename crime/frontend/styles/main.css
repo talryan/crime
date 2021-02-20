@@ -8,6 +8,17 @@ body {
 .btn{
     background: #e36bae;
     color: white;
+    font-size: 150%;
+    color: rgb(240, 240, 240);
+    width: 33%;
+	
+}
+.btn2{
+    background: #822659;
+    color: white;
+    font-size: 100%;
+    color: rgb(240, 240, 240);
+    width: 33%;
 	
 }
 

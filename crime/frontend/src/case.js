@@ -14,8 +14,13 @@ class Case {
     }
 
 // Callback function is like a ruby block when you are iterating
-
-
+listen () {
+unsolvedBtn.addEventListener("click", this.pressButtons)
+missingBtn.addEventListener("click", this.pressButtons)
+serialBtn.addEventListener("click", this.pressButtons)
+closedBtn.addEventListener("click", this.pressButtons)
+criminalBtn.addEventListener("click", this.pressButtons)
+}
 
 
     renderCase() {
@@ -25,58 +30,29 @@ class Case {
            ${this.known_as} 
         `
         caseDiv.appendChild(this.element)
+      
+    }
+        renderCaseSubmissionsPopUp() {
+        // let cForm = document.getElementById(“case-form”)
+        // const addBtn = document.querySelector(“#new-f-btn”);
+      
+        // cForm.style.display = “none”;
+        // addBtn.innerText = “Submit"
+        }
         // direct access to element
         //makes it easier to change at a later time 
         // Split append and render into separate functions **
         // append somehwere one time 
-    }
+}
 
+    // renderCasesWithinCategory() {
+    //     console.log(this.id) 
+    //     // let casesWithCategory = document.getElementById("category-container")
+    // }
     
    
-    // renderCase() {
+ 
 
-    //     // const missingDiv = document.querySelector("#missing-person")
-    //     // const criminalDiv = document.querySelector("#criminal")
-    //     // const serialKillerDiv = document.querySelector("#serial-killer")
-    //     // const unsolvedDiv = document.querySelector("#unsolved")
-    //     // const closedDiv = document.querySelector("#closed-case")
-
-        
-    //     // missingDiv.innerHTML = ""
-    //     // criminalDiv.innerHTML = ""
-    //     // serialKillerDiv.innerHTML = ""
-    //     // unsolvedDiv.innerHTML = ""
-    //     // closedDiv.innerHTML = ""
-
-    //    cases.forEach(trueCrimeCase => {
-    //         const p = document.createElement("p")
-    //         p.className = "case-details"
-    //         p.id = `${trueCrimeCase.id}`
-           
-    //         p.innerText = trueCrimeCase.known_as;
-
-    //         switch(trueCrimeCase.category.name) {
-    //             case "Missing Person":
-    //             missingDiv.appendChild(p)
-    //             break;
-    //             case "Criminal":
-    //             criminalDiv.appendChild(p)
-    //             break;
-    //             case "Serial Killer":
-    //             serialKillerDiv.appendChild(p)
-    //             break;
-    //             case "Unsolved Mystery":
-    //             unsolvedDiv.appendChild(p)
-    //             break;
-    //             case "Closed Case":
-    //             closedDiv.appendChild(p)
-    //             break;
-    //             default:
-    //                 "whoops"  //addd something here 
-    //         }
-    //     })
-    // }
-}
 
 
 

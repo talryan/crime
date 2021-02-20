@@ -4,6 +4,12 @@ const serialKillerDiv = document.querySelector("#serial-killer")
 const unsolvedDiv = document.querySelector("#unsolved")
 const closedDiv = document.querySelector("#closed-case")
 
+const unsolvedBtn = document.querySelector("#missing-btn")
+const missingBtn = document.querySelector("#criminal-btn")
+const serialBtn = document.querySelector("#serial-btn")
+const closedBtn =document.querySelector("#closed-btn")
+const criminalBtn = document.querySelector("#criminal-btn")
+
 document.addEventListener("DOMContentLoaded", () => {
     fetchCases(), createForm(), fetchCategories()
 })
@@ -27,7 +33,7 @@ function fetchCategories(){
     .then(response => response.json())
     .then(categories => { 
         for (const category of categories){
-            let cat = new Category (category.id, category.title)
+            let cat = new Category (category.id, category.title, category.cases)
             cat.renderCategory();
         }
     })
@@ -73,6 +79,9 @@ function fetchCategories(){
         caseForm.addEventListener("submit", caseFormSubmit)
 
     }
+
+
+  
 
     function caseFormSubmit(event) {
         event.preventDefault() 
@@ -123,13 +132,16 @@ function fetchCategories(){
     .then(response => response.json())
     .then(trueCrime => {
         let n = new Case (trueCrime.known_as, trueCrime.victim, trueCrime.bio, trueCrime.solved, trueCrime.category_id)
-        n.renderCase();
+        n.renderCaseSubmissionsPopUp();
 
     })
 
     }
 
+  
 
+
+  
 
     //Buttons for categories 
     //

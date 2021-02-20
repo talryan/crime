@@ -5,6 +5,11 @@ body {
     cursor: initial;
     
 }
+.btn{
+    background: #ee9cb5;
+    color: white;
+	left: 50%;
+}
 
 #cases-container {
     border: 1px solid black;
@@ -34,4 +39,8 @@ body {
     height: auto;
     text-align: center;
     margin: 50px 50px 50px 50px; 
+}
+
+li{
+    list-style-type: none;
 }

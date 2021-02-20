@@ -1,5 +1,33 @@
 body {
-    background-color: #e6a4b4;
+    background-color: #e7b0cc;
     cursor: initial;
     
+}
+
+#cases-container {
+    border: 1px solid black;
+    background-color :#edddf6;
+    width: auto;
+    height: auto;
+    margin: 50px 50px 50px 50px;
+   
+}
+
+#category-container {
+    border: 1px solid black;
+    background-color :#edddf6;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    margin: 50px 50px 50px 50px;
+   
+}
+
+#case-form {
+    border: 1px solid black;
+    background-color :#edddf6;
+    width: auto;
+    height: auto;
+    align-items: center;
+    margin: 50px 50px 50px 50px; 
 }

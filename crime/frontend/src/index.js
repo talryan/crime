@@ -130,3 +130,11 @@ function fetchCategories(){
     }
 
 
+
+    //Buttons for categories 
+    //
+    //Display more buttons with cases 
+    //
+    //Click on case for more info (modal)
+
+

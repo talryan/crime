@@ -43,7 +43,7 @@ renderCategory() {
             caseDiv.innerHTML +=
             `
            <li>
-            ${trueCrimeCase.known_as}
+           <button class="btn btn-dark"> ${trueCrimeCase.known_as} </button>
             
             </li>
             `

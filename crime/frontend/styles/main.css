@@ -1,19 +1,20 @@
 
 
 body {
-    background-color: #e7b0cc;
+    background-color: #b34180;
     cursor: initial;
     
 }
 .btn{
-    background: #ee9cb5;
+    background: #e36bae;
     color: white;
-	left: 50%;
+	
 }
+
 
 #cases-container {
     border: 1px solid black;
-    background-color :#edddf6;
+    background-color :#f8a1d1;
     width: auto;
     height: auto;
     text-align: center;
@@ -23,7 +24,7 @@ body {
 
 #category-container {
     border: 1px solid black;
-    background-color :#edddf6;
+    background-color :#f8a1d1;
     justify-content: center;
     width: auto;
     height: auto;
@@ -34,7 +35,7 @@ body {
 
 #case-form {
     border: 1px solid black;
-    background-color :#edddf6;
+    background-color :#f8a1d1;
     width: auto;
     height: auto;
     text-align: center;

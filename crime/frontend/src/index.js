@@ -10,8 +10,12 @@ const serialBtn = document.querySelector("#serial-btn")
 const closedBtn =document.querySelector("#closed-btn")
 const criminalBtn = document.querySelector("#criminal-btn")
 
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
-    fetchCases(), createForm(), fetchCategories()
+    fetchCases(), createForm(), fetchCategories(), addCBtnForm()
 })
 
 const baseUrl = "http://localhost:3000"
@@ -78,6 +82,23 @@ function fetchCategories(){
 
         caseForm.addEventListener("submit", caseFormSubmit)
 
+    }
+
+    function addCBtnForm() {
+        const addBtn = document.querySelector("#new-f-btn");
+        const cForm = document.querySelector("#case-form")
+        let addC = false;
+        cForm.style.display = "none";
+        addBtn.addEventListener("click", () => {
+            addC = !addC;
+            if (addC) {
+                cForm.style.display = "block";
+                addBtn.innerText = "Nah."
+            } else {
+                cForm.style.display = "none";
+                addBtn.innerText = "Submit Your Own Case"
+            }
+        })
     }
 
 

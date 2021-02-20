@@ -32,12 +32,13 @@ criminalBtn.addEventListener("click", this.pressButtons)
         caseDiv.appendChild(this.element)
       
     }
+   
         renderCaseSubmissionsPopUp() {
-        // let cForm = document.getElementById(“case-form”)
-        // const addBtn = document.querySelector(“#new-f-btn”);
-      
-        // cForm.style.display = “none”;
-        // addBtn.innerText = “Submit"
+        let cForm = document.getElementById("#case-form")
+        const addBtn = document.querySelector("new-f-btn");
+        alert("Thank you for submitting a case.");
+        cForm.style.display = "none";
+        addBtn.innerText = "Submit"
         }
         // direct access to element
         //makes it easier to change at a later time 

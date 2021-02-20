@@ -17,18 +17,18 @@ renderCategory() {
          Category: ${this.title} 
     `
     categoryDiv.appendChild(this.element)
-    this.element.addEventListener("click", () => this.casesWithinCategory())
+    // this.element.addEventListener("click", () => this.casesWithinCategory())
     // direct access to element
     //makes it easier to change at a later time 
     // Split append and render into separate functions **
     // append somehwere one time 
 }
 
-    render casesWithinCategory() {
-        let casesWithCategory = document.getElementById("category-container")
+    // render casesWithinCategory() {
+    //     let casesWithCategory = document.getElementById("category-container")
 
        
 
-    }
+    // }
 
 }

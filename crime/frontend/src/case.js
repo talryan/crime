@@ -22,7 +22,7 @@ class Case {
         let caseDiv = document.getElementById("cases-container")
         this.element.innerHTML =
         `
-             Name: ${this.known_as} 
+           ${this.known_as} 
         `
         caseDiv.appendChild(this.element)
         // direct access to element

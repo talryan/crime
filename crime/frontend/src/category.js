@@ -83,19 +83,7 @@ renderCategory() {
           
             
         
-    // artistDetailModals = document.querySelectorAll(".artist-details");
-    // closeButton = document.querySelector(".close")
-
-    // displayCaseDetails(details){
-    //     document.querySelector(".modal-title").innerHTML = `<p class="artist-name"> ${details.name}</p>`
-    //     document.querySelector(".modal-body").innerText = details.bio
-        
-    //   }
-        
-    
-
- 
-    // }
+  
 
  
 

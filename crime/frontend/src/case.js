@@ -13,37 +13,16 @@ class Case {
        
     }
 
-// Callback function is like a ruby block when you are iterating
-listen () {
-unsolvedBtn.addEventListener("click", this.pressButtons)
-missingBtn.addEventListener("click", this.pressButtons)
-serialBtn.addEventListener("click", this.pressButtons)
-closedBtn.addEventListener("click", this.pressButtons)
-criminalBtn.addEventListener("click", this.pressButtons)
-}
 
 
-    renderCase() {
-        // let caseDiv = document.getElementById("cases-container")
-        // this.element.innerHTML =
-        // `
-        //    ${this.known_as} 
-        // `
-        // caseDiv.appendChild(this.element)
-      
-    }
+
+    // renderCase() {
    
-        renderCaseSubmissionsPopUp() {
-        let cForm = document.getElementById("#case-form")
-        const addBtn = document.querySelector("new-f-btn");
-        alert("Thank you for submitting a case.");
-        cForm.style.display = "none";
-        addBtn.innerText = "Submit"
-        }
-        // direct access to element
-        //makes it easier to change at a later time 
-        // Split append and render into separate functions **
-        // append somehwere one time 
+    // }
+
+    
+   
+
 }
 
     

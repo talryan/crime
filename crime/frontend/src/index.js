@@ -1,14 +1,4 @@
-const missingDiv = document.querySelector("#missing-person")
-const criminalDiv = document.querySelector("#criminal")
-const serialKillerDiv = document.querySelector("#serial-killer")
-const unsolvedDiv = document.querySelector("#unsolved")
-const closedDiv = document.querySelector("#closed-case")
 
-const unsolvedBtn = document.querySelector("#missing-btn")
-const missingBtn = document.querySelector("#criminal-btn")
-const serialBtn = document.querySelector("#serial-btn")
-const closedBtn =document.querySelector("#closed-btn")
-const criminalBtn = document.querySelector("#criminal-btn")
 
 
 
@@ -27,7 +17,7 @@ function fetchCases(){
             for (const trueCrimeCase of cases){
         
             let c = new Case (trueCrimeCase.known_as, trueCrimeCase.victim, trueCrimeCase.bio, trueCrimeCase.solved, trueCrimeCase.category_id)
-            c.renderCase();
+            // c.renderCase();
             }
             })
 }
@@ -76,7 +66,7 @@ function fetchCategories(){
             <input type="radio" id="unsolvedMysteryForm" name = "category_id" value= "4"><br>
             <label for=“closedCaseForm"”> Closed Case:</label> 
             <input type="radio" id="closedCaseForm" name = "category_id" value= "5"><br>
-            <input type="submit" value="Create Case">
+            <input type="submit"  value="Create Case">
         </form>
         `;
 
@@ -106,7 +96,7 @@ function fetchCategories(){
 
     function caseFormSubmit(event) {
         event.preventDefault() 
-      
+       
       
         let newKnownAs = document.getElementById("known_as").value
         let newBio = document.getElementById("bio").value
@@ -153,14 +143,28 @@ function fetchCategories(){
     .then(response => response.json())
     .then(trueCrime => {
         let n = new Case (trueCrime.known_as, trueCrime.victim, trueCrime.bio, trueCrime.solved, trueCrime.category_id)
-        n.renderCaseSubmissionsPopUp();
+      renderCaseSubmissionsPopUp(n);
+    
+        
 
     })
-
-    }
-
+    event.target.reset()
   
 
+}
+
+  
+    function renderCaseSubmissionsPopUp() {
+
+        let cForm = document.getElementById("#case-form")
+        const addBtn = document.getElementById("new-f-btn");
+        alert("Thank you for submitting a case.");
+
+        addBtn.innerText = "Submit"
+     
+
+     
+        }
 
   
 

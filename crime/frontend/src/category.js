@@ -33,11 +33,14 @@ renderCategory() {
         let caseDiv = document.getElementById("cases-container")
    
       
-        caseDiv.innerHTML = ""
+        caseDiv.innerHTML = " <h2> Select a Case to Learn More About:</h2>"
+
             this.cases.forEach(trueCrimeCase => 
             caseDiv.innerHTML +=
             `
+           
            <li>
+          
            <button class="modal-button"> ${trueCrimeCase.known_as} </button>
            
             </li>
@@ -53,8 +56,8 @@ renderCategory() {
                     modalDiv.innerHTML =
                     `
                     <span class="modal-close">x </span>
-                       <h2> ${trueCrime.known_as}</h2>
-                      <h3> Bio: ${trueCrime.bio}<br></h3>
+                       <h3> ${trueCrime.known_as}</h3>
+                      <h4> Bio: <br><br>${trueCrime.bio}<br></h4>
                     
                     `
              

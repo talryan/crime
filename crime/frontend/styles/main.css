@@ -1,30 +1,69 @@
 
+header {
+    align-content: center;
+    padding: 0px;
 
-body {
-    background-color: #b34180;
-    cursor: initial;
-    
 }
-.btn{
-    background: #e36bae;
+img {
+    
+    width: 85%;
+    /* width is 3xs as big as height */ 
+   
+    margin-left: auto;
+    margin-right: auto; 
+    display: block;
+ 
+}
+h2 {
+    color: white;
+}
+
+h4 {
+    text-align: center;
+}
+h3 {
+    color: #a82329 ;
+}
+
+#new-f-btn {
+    font-family: 'Courier New', sans-serif;
+    background: #a82329;
+    display: inline-block;
     color: white;
     font-size: 150%;
-    color: rgb(240, 240, 240);
-    width: 33%;
+   
+    width: 40%;
+
+}
+
+body {
+    background-color: #1d1d1d;
+    cursor: initial;
+}
+.btn{
+    font-family: 'Courier New', sans-serif;
+    background: #a82329;
+    display: inline-block;
+    color: white;
+    font-size: 150%;
+   
+    width: 50%;
 	
 }
 .modal-button{
-    background: #822659;
+    font-family: 'Courier New', sans-serif;
+    background: #c29c35;
     color: white;
-    font-size: 100%;
+    font-size: 120%;
     color: rgb(240, 240, 240);
-    width: 33%;
+    width: 40%;
 	
 }
 
 
 
 .modal-bg{
+    
     position: fixed;
     top: 0;
     left: 0;
@@ -57,7 +96,7 @@ body {
 }
 
 .modal {
-    font-family: 'Monrserrat', sans-serif;
+    font-family: 'Courier New', sans-serif;
     background-color: white;
     width: 30%;
     height: auto;
@@ -70,36 +109,36 @@ body {
 
 
 #cases-container {
-    border: 1px solid black;
-    background-color :#f8a1d1;
-    width: auto;
+  
+
+    width: 50% ;
     height: auto;
     text-align: center;
-    font-family: 'Monrserrat', sans-serif;
+    font-family: 'Courier New', sans-serif;
     margin: 50px 50px 50px 50px;
     
    
 }
 
 #category-container {
-    border: 1px solid black;
-    background-color :#f8a1d1;
+    /* border: 1px solid black; */
+    /* background-color :#bbb2b5; */
     justify-content: center;
     width: auto;
     height: auto;
     text-align: center;
-    font-family: 'Monrserrat', sans-serif;
+    font-family: 'Courier New', sans-serif;
     margin: 50px 50px 50px 50px;
    
 }
 
 #case-form {
     border: 1px solid black;
-    background-color :#f8a1d1;
+    background-color :#bbb2b5;
     width: auto;
     height: auto;
     text-align: center;
-    font-family: 'Monrserrat', sans-serif;
+    font-family: 'Courier New', sans-serif;
     margin: 50px 50px 50px 50px; 
 }
 

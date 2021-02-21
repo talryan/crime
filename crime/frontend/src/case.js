@@ -46,10 +46,6 @@ criminalBtn.addEventListener("click", this.pressButtons)
         // append somehwere one time 
 }
 
-    // renderCasesWithinCategory() {
-    //     console.log(this.id) 
-    //     // let casesWithCategory = document.getElementById("category-container")
-    // }
     
    
  

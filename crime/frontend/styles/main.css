@@ -34,6 +34,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* display:none; */
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
@@ -48,8 +49,8 @@ body {
 .modal {
     font-family: 'Monrserrat', sans-serif;
     background-color: white;
-    width: 30%;
-    height: 30%;
+    width: auto;
+    height: auto;
     display:flex;
     justify-content: space-around;
     align-items: center;

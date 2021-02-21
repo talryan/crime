@@ -48,8 +48,7 @@ renderCategory() {
 
                 for (let btn of modalBtn){ btn.addEventListener('click', function(e){
                     let trueCrime = Case.cases.find((c) => c.known_as == e.target.innerText)
-                // modalBtn.addEventListener('click', function(event) {
-                //  debugger
+                
                     document.body.innerHTML +=
                     `
                     <div class = "modal-bg">
@@ -60,8 +59,9 @@ renderCategory() {
                     </div>
                     `
                     let modalBg = document.querySelector('.modal-bg');
+                    modalBg.classList.add("bg-active");
                     // console.log("hello")
-                    modalBg.style.display = "block";
+                    // modalBg.style.display = "block";
                 })
             }
           

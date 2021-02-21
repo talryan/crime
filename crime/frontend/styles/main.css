@@ -43,6 +43,16 @@ body {
 .bg-active {
     visibility: visible;
     opacity:1; 
+}
+
+.modal-close{
+    position: relative;
+    color: red;
+    height: auto;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    cursor:pointer;
 
 }
 

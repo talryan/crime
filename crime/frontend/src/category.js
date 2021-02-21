@@ -33,7 +33,7 @@ renderCategory() {
         let caseDiv = document.getElementById("cases-container")
    
       
-        // caseDiv.innerHTML = ""
+        caseDiv.innerHTML = ""
             this.cases.forEach(trueCrimeCase => 
             caseDiv.innerHTML +=
             `
@@ -48,29 +48,38 @@ renderCategory() {
 
                 for (let btn of modalBtn){ btn.addEventListener('click', function(e){
                     let trueCrime = Case.cases.find((c) => c.known_as == e.target.innerText)
-                
-                    document.body.innerHTML +=
+                    // document.body.innerHTML +=
+                    let modalDiv = document.querySelector(".modal")
+                    modalDiv.innerHTML =
                     `
-                    <div class = "modal-bg">
-                    <div class = "modal">
-                       <h3> ${trueCrime.known_as}</h3>
-                       ${trueCrime.bio}
-                    </div>
-                    </div>
+                    <span class="modal-close">x </span>
+                       <h2> ${trueCrime.known_as}</h2>
+                      <h3> Bio: ${trueCrime.bio}<br></h3>
+                    
                     `
+             
                     let modalBg = document.querySelector('.modal-bg');
                     modalBg.classList.add("bg-active");
-                    // console.log("hello")
-                    // modalBg.style.display = "block";
+                
+                    let modalClose = document.querySelector('.modal-close');
+                  
+                    modalClose.addEventListener("click", function() {
+                    modalBg.classList.remove("bg-active");
                 })
-            }
-          
-            // modalBtn.addEventListener('click', function() {
-            //     // modalBg.classList.add('bg-active');
-            //     modalBg.style.visibility = "visible"
+           
+            })
+        }
+        }
+    }
+
+
+       
+     
+     
+        
           
             
-    }
+        
     // artistDetailModals = document.querySelectorAll(".artist-details");
     // closeButton = document.querySelector(".close")
 
@@ -79,8 +88,9 @@ renderCategory() {
     //     document.querySelector(".modal-body").innerText = details.bio
         
     //   }
-       
-    }
+        
+    
+
  
     // }
 

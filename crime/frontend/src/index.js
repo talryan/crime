@@ -1,37 +1,36 @@
 
 
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    fetchCases(), createForm(), fetchCategories(), addCBtnForm()
-})
-
-const baseUrl = "http://localhost:3000"
-
-function fetchCases(){
-        fetch(`${baseUrl}/cases`)
-        .then(response => response.json())
-        .then(cases => { 
-            for (const trueCrimeCase of cases){
-        
-            let c = new Case (trueCrimeCase.known_as, trueCrimeCase.victim, trueCrimeCase.bio, trueCrimeCase.solved, trueCrimeCase.category_id)
-            // c.renderCase();
-            }
-            })
-}
-
-function fetchCategories(){
-    fetch(`${baseUrl}/categories`)
-    .then(response => response.json())
-    .then(categories => { 
-        for (const category of categories){
-            let cat = new Category (category.id, category.title, category.cases)
-            cat.renderCategory();
-        }
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        fetchCases(), createForm(), fetchCategories(), addCBtnForm()
     })
-}
+
+    const baseUrl = "http://localhost:3000"
+
+    function fetchCases(){
+            fetch(`${baseUrl}/cases`)
+            .then(response => response.json())
+            .then(cases => { 
+                for (const trueCrimeCase of cases){
+            
+                let c = new Case (trueCrimeCase.known_as, trueCrimeCase.victim, trueCrimeCase.bio, trueCrimeCase.solved, trueCrimeCase.category_id)
+                // c.renderCase();
+                }
+                })
+    }
+
+
+
+    function fetchCategories(){
+            fetch(`${baseUrl}/categories`)
+            .then(response => response.json())
+            .then(categories => { 
+            for (const category of categories){
+                let cat = new Category (category.id, category.title, category.cases)
+                cat.renderCategory();
+            }
+        })
+    }
 
     function createForm(){
         let caseForm = document.getElementById("case-form")
@@ -97,7 +96,6 @@ function fetchCategories(){
     function caseFormSubmit(event) {
         event.preventDefault() 
        
-      
         let newKnownAs = document.getElementById("known_as").value
         let newBio = document.getElementById("bio").value
 
@@ -122,56 +120,76 @@ function fetchCategories(){
                 if (categoryRadio[i].checked) {
                     newCategory = categoryRadio[i].value
                 }
+            }
+
+        const trueCrime = {
+             known_as: newKnownAs,
+            bio: newBio,
+            category_id: newCategory,
+            solved: newSolved,
+            victim: newVictim
         }
-
-    let trueCrime = {
-        known_as: newKnownAs,
-        bio: newBio,
-        category_id: newCategory,
-        solved: newSolved,
-        victim: newVictim
-
-    }
-    fetch(`${baseUrl}/cases`, {
+    // fetch(`${baseUrl}/cases`, {
+        const configObj = {
         method: "POST",
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(trueCrime)
-    })
-    .then(response => response.json())
-    .then(trueCrime => {
-        let n = new Case (trueCrime.known_as, trueCrime.victim, trueCrime.bio, trueCrime.solved, trueCrime.category_id)
-      renderCaseSubmissionsPopUp(n);
-    
-        
-
-    })
-    event.target.reset()
-  
-
-}
-
-  
-    function renderCaseSubmissionsPopUp() {
-
-        let cForm = document.getElementById("#case-form")
-        const addBtn = document.getElementById("new-f-btn");
-        alert("Thank you for submitting a case.");
-
-        addBtn.innerText = "Submit"
-     
-
-     
         }
 
-  
+        fetch("http://localhost:3000/cases", configObj)
+        .then(response => response.json())
+        .then(trueCrime => {
+            let n = new Case (trueCrime.known_as, trueCrime.victim, trueCrime.bio, trueCrime.solved, trueCrime.category_id)
+        // console.log(n)
+        
+        renderCase(n)
+       
+        })
+            
+        event.target.reset()
+        
 
-    //Buttons for categories 
-    //
-    //Display more buttons with cases 
-    //
-    //Click on case for more info (modal)
+    }
+    // let modalBtn = document.querySelectorAll('.modal-button');
+    function renderCase(trueCrime) {
+        const li = document.createElement('li')
+        let caseDiv = document.getElementById("cases-container")
+      
+        li.innerHTML = 
+            `
+            <button class="modal-button"> ${trueCrime.known_as} </button>
+            `
+        caseDiv.appendChild(li) 
+        alert("Thank you for submitting a case.");
+    
 
+    // function createModal() {
+          let modalBtn = document.querySelectorAll('.modal-button');
+            for (let btn of modalBtn){ btn.addEventListener('click', function(e){
+                let crimeCase = Case.cases.find((c) => c.known_as == e.target.innerText)
+                let modalDiv = document.querySelector(".modal")
+                modalDiv.innerHTML =
+                        `
+                        <span class="modal-close">x </span>
+                        <h3> ${crimeCase.known_as}</h3>
+                        <h4> Bio: <br><br>${trueCrime.bio}<br></h4>
+                        
+                        `           
+                let modalBg = document.querySelector('.modal-bg');
+                modalBg.classList.add("bg-active");
+
+                let modalClose = document.querySelector('.modal-close');
+
+                modalClose.addEventListener("click", function() {
+                modalBg.classList.remove("bg-active");
+            })
+
+        })
+     }
+    }
+
+    
 

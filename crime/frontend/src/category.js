@@ -31,8 +31,6 @@ renderCategory() {
 
     renderCasesWithinCategory() {
         let caseDiv = document.getElementById("cases-container")
-   
-      
         caseDiv.innerHTML = " <h2> Select a Case to Learn More About:</h2>"
 
             this.cases.forEach(trueCrimeCase => 
@@ -45,13 +43,11 @@ renderCategory() {
            
             </li>
             `
-          
             );
             let modalBtn = document.querySelectorAll('.modal-button');
 
                 for (let btn of modalBtn){ btn.addEventListener('click', function(e){
                     let trueCrime = Case.cases.find((c) => c.known_as == e.target.innerText)
-                    // document.body.innerHTML +=
                     let modalDiv = document.querySelector(".modal")
                     modalDiv.innerHTML =
                     `
@@ -59,8 +55,7 @@ renderCategory() {
                        <h3> ${trueCrime.known_as}</h3>
                       <h4> Bio: <br><br>${trueCrime.bio}<br></h4>
                     
-                    `
-             
+                    `           
                     let modalBg = document.querySelector('.modal-bg');
                     modalBg.classList.add("bg-active");
                 

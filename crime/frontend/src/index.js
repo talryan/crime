@@ -3,18 +3,17 @@
     
     document.addEventListener("DOMContentLoaded", () => {
         fetchCases(), createForm(), fetchCategories(), addCBtnForm()
-    })
+    }) // on DOM load, run these functions 
 
     const baseUrl = "http://localhost:3000"
+    const li = document.createElement('li')
 
     function fetchCases(){
             fetch(`${baseUrl}/cases`)
             .then(response => response.json())
             .then(cases => { 
                 for (const trueCrimeCase of cases){
-            
                 let c = new Case (trueCrimeCase.known_as, trueCrimeCase.victim, trueCrimeCase.bio, trueCrimeCase.solved, trueCrimeCase.category_id)
-                // c.renderCase();
                 }
                 })
     }
@@ -90,9 +89,6 @@
         })
     }
 
-
-  
-
     function caseFormSubmit(event) {
         event.preventDefault() 
        
@@ -129,7 +125,7 @@
             solved: newSolved,
             victim: newVictim
         }
-    // fetch(`${baseUrl}/cases`, {
+   
         const configObj = {
         method: "POST",
         headers: {
@@ -145,7 +141,7 @@
             let n = new Case (trueCrime.known_as, trueCrime.victim, trueCrime.bio, trueCrime.solved, trueCrime.category_id)
         // console.log(n)
         
-        renderCase(n)
+        n.renderCase()
        
         })
             
@@ -153,43 +149,10 @@
         
 
     }
-    // let modalBtn = document.querySelectorAll('.modal-button');
-    function renderCase(trueCrime) {
-        const li = document.createElement('li')
-        let caseDiv = document.getElementById("cases-container")
-      
-        li.innerHTML = 
-            `
-            <button class="modal-button"> ${trueCrime.known_as} </button>
-            `
-        caseDiv.appendChild(li) 
-        alert("Thank you for submitting a case.");
     
-
-    // function createModal() {
-          let modalBtn = document.querySelectorAll('.modal-button');
-            for (let btn of modalBtn){ btn.addEventListener('click', function(e){
-                let crimeCase = Case.cases.find((c) => c.known_as == e.target.innerText)
-                let modalDiv = document.querySelector(".modal")
-                modalDiv.innerHTML =
-                        `
-                        <span class="modal-close">x </span>
-                        <h3> ${crimeCase.known_as}</h3>
-                        <h4> Bio: <br><br>${trueCrime.bio}<br></h4>
-                        
-                        `           
-                let modalBg = document.querySelector('.modal-bg');
-                modalBg.classList.add("bg-active");
-
-                let modalClose = document.querySelector('.modal-close');
-
-                modalClose.addEventListener("click", function() {
-                modalBg.classList.remove("bg-active");
-            })
-
-        })
-     }
-    }
+   
+     
+    
 
     
 

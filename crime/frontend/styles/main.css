@@ -31,9 +31,9 @@ h3 {
     display: inline-block;
     color: white;
     font-size: 150%;
-   
     width: 40%;
-
+    
+    border: 2px solid white;
 }
 
 body {
@@ -46,18 +46,20 @@ body {
     display: inline-block;
     color: white;
     font-size: 150%;
-   
     width: 50%;
 	
 }
 .modal-button{
     font-family: 'Courier New', sans-serif;
+    color: black;
     background: #c29c35;
-    color: white;
+    /* background: #e2d272; */
+    /* color: white; */
+   
     font-size: 120%;
     color: rgb(240, 240, 240);
     width: 40%;
-	
+    border: 2px solid white;
 }
 
 
@@ -72,7 +74,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* display:none; */
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
@@ -120,8 +121,7 @@ body {
 }
 
 #category-container {
-    /* border: 1px solid black; */
-    /* background-color :#bbb2b5; */
+ 
     justify-content: center;
     width: auto;
     height: auto;

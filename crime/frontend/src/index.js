@@ -38,23 +38,23 @@
         caseForm.innerHTML +=
         `
         <form>
-            Name: <input type="text" id="known_as"><br>
-            Victim? 
+            <strong> Name:</strong> <input type="text" id="known_as" required> <br>
+            <strong> Victim? </strong>
             <label for=“victimFormYes”>Yes:</label> 
             <input  type="radio" id="victimFormYes" name = "victim" value= "true">
             <label for=“victimFormNo”>No:</label> 
             <input type="radio" id="victimFormNo" name = "victim" value= "false"><br>
-            Bio: <input type="text" id="bio"><br>
+           <strong>  Bio: </strong>  <input type="text" id="bio" required><br>
 
 
-            Solved?: 
+            <strong> Solved?: </strong>
             <label for=“solvedFormYes”>Yes:</label> 
             <input type="radio" id="solvedFormYes" name = "solved" value= "true">
             <label for=“solvedFormNo”>No:</label> 
             <input type="radio" id="solvedFormNo" name = "solved" value= "false"><br>
         
 
-            Category: <br>
+            <strong> Category: </strong> <br>
             <label for=“missingPersonForm”> Missing Person:</label> 
             <input type="radio" id="missingPersonForm" name = "category_id" value= "1"><br>
             <label for=“missingPersonForm”> Criminal:</label> 

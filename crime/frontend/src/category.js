@@ -1,5 +1,6 @@
 class Category {
     static categories = [];
+    
     constructor(id, title, cases){
         this.id = id
         this.title = title
@@ -8,9 +9,8 @@ class Category {
         Category.categories.push(this);
     }
 
-
-
-
+  
+   
 
     renderCategory() {
         let categoryDiv = document.getElementById("category-container")
@@ -27,10 +27,10 @@ class Category {
             let caseDiv = document.getElementById("cases-container")
             caseDiv.innerHTML =
             `
-            " <h2> Select a Case to Learn More About:</h2>"
+            <h2> Select a ${this.title} Case to Learn More About:</h2>
             `
-
-                this.cases.forEach(trueCrimeCase => 
+           
+            this.cases.forEach(trueCrimeCase => 
                 caseDiv.innerHTML +=
                 `
                 <li>
@@ -48,6 +48,9 @@ class Category {
                 })
             }
         }
+      
+
+       
 }
 
 

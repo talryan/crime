@@ -11,6 +11,9 @@ class Case {
        
     }
 
+
+   
+
     renderCase() {
         let caseDiv = document.getElementById("cases-container")
       

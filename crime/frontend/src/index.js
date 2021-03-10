@@ -3,7 +3,7 @@
     
     document.addEventListener("DOMContentLoaded", () => {
         fetchCases(), createForm(), fetchCategories(), addCBtnForm()
-    }) // on DOM load, run these functions 
+    }) 
 
     const baseUrl = "http://localhost:3000"
     const li = document.createElement('li')
@@ -126,7 +126,7 @@
             victim: newVictim
         }
    
-        const configObj = {
+        const configObj = { // used in not get req's
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -139,7 +139,7 @@
         .then(response => response.json())
         .then(trueCrime => {
             let n = new Case (trueCrime.known_as, trueCrime.victim, trueCrime.bio, trueCrime.solved, trueCrime.category_id)
-        // console.log(n)
+       
         
         n.renderCase()
        
@@ -149,24 +149,41 @@
     }
 
     function addLifeToModal (trueCrime){
-    let modalDiv = document.querySelector(".modal")
-    modalDiv.innerHTML =
-            `
-            <span class="modal-close">x </span>
-            <h3> ${trueCrime.known_as}</h3>
-            <h4> Bio: <br><br>${trueCrime.bio}<br></h4>
+            let modalDiv = document.querySelector(".modal")
+            modalDiv.innerHTML =
+                    `
+                    <span class="modal-close">x </span>
+                    <h3> ${trueCrime.known_as}</h3>
+                    <h4> Bio: <br><br>${trueCrime.bio}<br></h4>
+
+                    `           
             
-            `           
-    let modalBg = document.querySelector('.modal-bg');
-    modalBg.classList.add("bg-active");
+            let modalBg = document.querySelector('.modal-bg');
+            modalBg.classList.add("bg-active");
+        
+            let modalClose = document.querySelector('.modal-close');
 
-    let modalClose = document.querySelector('.modal-close');
+            modalClose.addEventListener("click", function(){
+            modalBg.classList.remove("bg-active")
+             })
+    }
 
-    modalClose.addEventListener("click", function() {
-    modalBg.classList.remove("bg-active");
-})
+ 
+    const toggleBtn = document.getElementById("toggle");
+    
+    toggleBtn.addEventListener("click", function() {
+         
+          document.body.classList.toggle("dark-mode")
+    })
+        
+         
+    
+   
 
-}
+
+
+
+
     
     
    

@@ -32,10 +32,26 @@ h3 {
     border: 2px solid white;
 }
 
+.toggle-button{
+    font-family: 'Courier New', sans-serif;
+    background: black;
+    display: inline-block;
+    color: white;
+    font-size: 100%;
+    width: 50%;
+}
+
+
 body {
     background-color: #1d1d1d;
     cursor: initial;
 }
+
+.dark-mode {
+    background-color: white;
+    color: white;
+  }
+  
 .btn{
     font-family: 'Courier New', sans-serif;
     background: #a82329;

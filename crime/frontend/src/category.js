@@ -42,29 +42,12 @@ class Category {
             let modalBtn = document.querySelectorAll('.modal-button');
 
                 for (let btn of modalBtn){ btn.addEventListener('click', function(e){
-                  
+                 
                     let trueCrime = Case.cases.find((c) => c.known_as == e.target.innerText)
-                    let modalDiv = document.querySelector(".modal")
-                    modalDiv.innerHTML =
-
-                    `
-                        <span class="modal-close">x </span>
-                        <h3> ${trueCrime.known_as}</h3>
-                        <h4> Bio: <br><br>${trueCrime.bio}<br></h4>
-                     `           
-
-                    let modalBg = document.querySelector('.modal-bg');
-                    modalBg.classList.add("bg-active");
-                
-                    let modalClose = document.querySelector('.modal-close');
-                
-                    modalClose.addEventListener("click", function() {
-                    modalBg.classList.remove("bg-active");
+                    addLifeToModal(trueCrime)
                 })
-           
-            })
+            }
         }
-     }
 }
 
 
